@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABZ.GARMZ | Streetwear</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+  background: #000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #000, #111);
+}
+
+.hero h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 48px;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-family: 'Anton', sans-serif;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: #111;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  margin: 10px 0 5px;
+}
+
+.product p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+
+select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+}
+
+button {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CART */
+#cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#cart {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 280px;
+  background: #111;
+  border: 1px solid #333;
+  padding: 15px;
+  display: none;
+  z-index: 1000;
+}
+
+#cart ul {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#cart li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ABZ.GARMZ</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div id="cart-button" onclick="toggleCart()">
+  🛒 Cart (<span id="cart-count">0</span>)
+</div>
+
+<div id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p><strong>Total:</strong> £<span id="cart-total">0</span></p>
+  <button onclick="checkout()">Checkout</button>
+</div>
+
+<section class="hero">
+  <h1>STREETWEAR REDEFINED</h1>
+</section>
+
+<section class="products">
+  <h2 class="section-title">Featured Drops</h2>
+
+  <div class="grid">
+
+    <!-- Ralph Lauren Tracksuit -->
+    <div class="product">
+      <img src="IMG_9583.jpeg" alt="Ralph Lauren Tracksuit">
+      <img src="IMG_9405.jpeg" alt="Ralph Lauren Tracksuit">
+
+      <h3>Ralph Lauren Tracksuit</h3>
+      <p><strong>£35 – Postage Included</strong></p>
+      <p>Premium full Ralph Lauren tracksuit. Comfortable fit, clean design, perfect for daily wear or meet-ups.</p>
+
+      <select id="rl-size">
